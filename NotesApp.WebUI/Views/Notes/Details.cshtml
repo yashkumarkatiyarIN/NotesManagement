@@ -1,0 +1,12 @@
+﻿@model NotesApp.Application.DTOs.NoteDto
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>@Model.Title</h2>
+
+<p>@Model.Content</p>
+<p><small>Created: @Model.CreatedOn.ToLocalTime()</small></p>
+<p><small>Updated: @(Model.UpdatedOn?.ToLocalTime().ToString() ?? "Never")</small></p>
+<p><small>Tags: @string.Join(", ", Model.Tags)</small></p>
+
+<a class="btn btn-secondary" href="@Url.Action("Index")">Back</a>

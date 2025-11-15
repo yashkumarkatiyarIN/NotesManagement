@@ -1,0 +1,37 @@
+﻿@model EditNoteViewModel
+@{
+    ViewData["Title"] = "Edit Note";
+}
+<h2>Edit Note</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Content"></label>
+        <textarea asp-for="Content" class="form-control" rows="6"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Priority"></label>
+        <select asp-for="Priority" class="form-select">
+            <option value="0">Low</option>
+            <option value="1">Medium</option>
+            <option value="2">High</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Tags">Tags (comma separated)</label>
+        <input asp-for="Tags" class="form-control" />
+    </div>
+    <button class="btn btn-success">Save</button>
+    <a class="btn btn-secondary" href="@Url.Action("Index")">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Create Note";
+}
+<h2>Create Note</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label>Title</label>
+        <input class="form-control" name="Title" required />
+    </div>
+    <div class="mb-3">
+        <label>Content</label>
+        <textarea class="form-control" name="Content" rows="6" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label>Priority</label>
+        <select name="Priority" class="form-select">
+            <option value="0">Low</option>
+            <option value="1" selected>Medium</option>
+            <option value="2">High</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Tags (comma separated)</label>
+        <input class="form-control" name="Tags" />
+    </div>
+    <button class="btn btn-primary">Create</button>
+    <a class="btn btn-secondary" href="@Url.Action("Index")">Back</a>
+</form>

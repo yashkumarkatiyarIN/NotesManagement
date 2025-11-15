@@ -1,0 +1,15 @@
+﻿@model NotesApp.Application.DTOs.NoteDto
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>Delete Note</h2>
+
+<div class="alert alert-warning">
+    Are you sure you want to delete "@Model.Title"?
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <button class="btn btn-danger">Delete</button>
+    <a class="btn btn-secondary" href="@Url.Action("Index")">Cancel</a>
+</form>

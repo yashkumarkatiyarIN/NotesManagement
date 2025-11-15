@@ -1,0 +1,47 @@
+﻿@model IEnumerable<NotesApp.Application.DTOs.NoteDto>
+@{
+    ViewData["Title"] = "Notes";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Notes</h2>
+    <a class="btn btn-primary" href="@Url.Action("Create")">Create New Note</a>
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No notes yet.</div>
+}
+else
+{
+    <div>
+        @foreach (var n in Model)
+        {
+            var cls = n.Priority switch
+            {
+                0 => "priority-low",
+                1 => "priority-medium",
+                2 => "priority-high",
+                _ => ""
+            };
+            <div class="card @cls mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>@n.Title</h5>
+                            <p class="note-content">@n.Content</p>
+                            <p class="mb-0 text-muted">Created: @n.CreatedOn.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</p>
+                            <p class="mb-0 text-muted">Updated: @(n.UpdatedOn?.ToLocalTime().ToString("yyyy-MM-dd HH:mm") ?? "Never")</p>
+                            <p class="mt-2"><small>Tags: @string.Join(", ", n.Tags)</small></p>
+                        </div>
+                        <div class="text-end">
+                            <a class="btn btn-sm btn-outline-primary" href="@Url.Action("Edit", new { id = n.Id })">Edit</a>
+                            <a class="btn btn-sm btn-outline-secondary" href="@Url.Action("Details", new { id = n.Id })">Details</a>
+                            <a class="btn btn-sm btn-outline-danger" href="@Url.Action("Delete", new { id = n.Id })">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

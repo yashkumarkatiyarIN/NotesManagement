@@ -1,9 +1,9 @@
-# 📘 Notes Management System (ASP.NET MVC, .NET 8, Clean Architecture)
+# 📘 Notes Management System (ASP.NET MVC, .NET 8)
 
-A modular, maintainable Notes Management System built using **ASP.NET Core MVC (.NET 8)**, following **Clean Architecture**, and using **Entity Framework Core (SQL Server)** with **Code-First** approach.
+A modular, maintainable Notes Management System built using **ASP.NET Core MVC (.NET 8)**, and using **Entity Framework Core (SQL Server)** with **Code-First** approach.
 
 
-# 🧱 Clean Architecture Solution Structure
+# 🧱 Architecture Solution Structure
 
 NotesManagementSystem/
 │
@@ -22,7 +22,7 @@ NotesManagementSystem/
 └── NotesApp.WebUI/
 ├── MVC Controllers
 ├── Views (Create, Edit, List)
-└── Dependency Injection Setup
+└── Dependency Injection
 
 
 ### ⭐ Layer Responsibilities
@@ -94,28 +94,28 @@ This ensures separation of concerns and maintainability.
 - **SQL Server**
 - **Bootstrap 5**
 - **Clean Architecture**
-- **Repository + Unit of Work Patterns**
+- **Repository Patterns**
+- **Unit of Work Patterns**
 
 
 
 # 🚀 How to Run the Project (Local Setup)
 
    1️⃣ Clone the repository
-
-git clone https://github.com/<your-username>/NotesManagementSystem.git
+         git clone https://github.com/yashkumarkatiyarIN/NotesManagement.git
 
     2️⃣ Open the solution
-NotesManagementSystem.sln
+         NotesManagement.sln
     3️⃣ Update database connection string
-NotesApp.WebUI/appsettings.json
+         NotesApp.WebUI/appsettings.json
 
-"ConnectionStrings": {
-  "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=NotesManagementDb;Trusted_Connection=True;TrustServerCertificate=True;"
-}
+         "ConnectionStrings": {
+           "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=NotesManagementDb;Trusted_Connection=True;TrustServerCertificate=True;"
+         }
     4️⃣ Apply migrations
-Update-Database -Project NotesApp.Infrastructure
+         Update-Database -Project NotesApp.Infrastructure
     5️⃣ Run the WebUI project
-Press F5 or Ctrl+F5
+         Press F5 or Ctrl+F5
 
 📸 Screenshots
 

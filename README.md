@@ -96,13 +96,14 @@ This ensures separation of concerns and maintainability.
 - **Clean Architecture**
 - **Repository + Unit of Work Patterns**
 
----
+
 
 # 🚀 How to Run the Project (Local Setup)
 
-### 1️⃣ Clone the repository
-```bash
+   1️⃣ Clone the repository
+
 git clone https://github.com/<your-username>/NotesManagementSystem.git
+
     2️⃣ Open the solution
 NotesManagementSystem.sln
     3️⃣ Update database connection string
@@ -118,5 +119,14 @@ Press F5 or Ctrl+F5
 
 📸 Screenshots
 
-<img width="1334" height="945" alt="image" src="https://github.com/user-attachments/assets/5075b989-5c4b-4920-9082-23c80f5de9be" />
+<img width="1321" height="944" alt="HomePage" src="https://github.com/user-attachments/assets/41084562-70f5-473c-aa2f-a2c8fe6223f4" />
+<img width="1326" height="599" alt="image" src="https://github.com/user-attachments/assets/c542f763-2cc1-41bc-8d2d-c3bf176f375d" />
+<img width="1307" height="583" alt="image" src="https://github.com/user-attachments/assets/ce4da1c8-1750-4a05-87a9-91b064bcb255" />
+<img width="779" height="244" alt="image" src="https://github.com/user-attachments/assets/cbe7a80f-b7d0-4939-a2d3-835644ef2a69" />
+
+
+👨‍💻 Author
+Yash Katiyar
+https://github.com/yashkumarkatiyarIN
+
 
